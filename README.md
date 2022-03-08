@@ -25,5 +25,11 @@ Additional considerations:
 - Is there some state we need to initialize?
 - Ask: should any of this work be abstracted into functions? (i.e., is the work complicated? can it be resused?)
 
+~~~~~~APP PLAN ~~~~~~~~~~~
 CREATE WIREFRAME IMG of page
-add HTML/DOM div elements to create page structure and
+add HTML/DOM div elements to create page structure 
+source images from png drawings
+add DOM get elements 
+add DOM event listeners
+add DOM FUNCTIONS to JSS for HTML interaction
+style and format CSS
