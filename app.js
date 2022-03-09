@@ -15,42 +15,43 @@ const totalEl = document.getElementById('total');
 let wins = 0;
 let total = 0;
 
-function handleGuess(userGuess, correctSpot) {
+// set event listeners 
+button0.addEventListener('click', () => {
+  const correctCup = getRandomCup();
+  handleGuess('cup-0', correctCup);
+});
+
+button1.addEventListener('click', () => {
+  const correctCup = getRandomCup();
+  handleGuess('cup-1', correctCup);
+});
+
+button2.addEventListener('click', () => {
+  const correctCup = getRandomCup();
+  handleGuess('cup-2', correctCup);
+});
+
+function handleGuess(userGuess, correctCup) {
   cupImg0.src = 'assets/cup0.png';
   cupImg1.src = 'assets/cup1.png';
   cupImg2.src = 'assets/cup2.png';
   total++;
 
-  // set event listeners 
-  button0.addEventListener('click', () => {
-    const correctSpot = getRandomHidingSpot();
-    handleGuess('cup-0', correctSpot);
-  });
+  const correctCup = Math.floor(Math.random() * 3);
+  return hidingPlaces[index];
 
-  button1.addEventListener('click', () => {
-    const correctSpot = getRandomHidingSpot();
-    handleGuess('cup-1', correctSpot);
-  });
-
-  button2.addEventListener('click', () => {
-    const correctSpot = getRandomHidingSpot();
-    handleGuess('cup-2', correctSpot);
-  });
-
-  function getRandomHidingSpot() {
+  function getRandomCup() {
     const hidingPlaces = [
-      'cup1',
-      'cup2',
-      'cup3',
+      'cup-0',
+      'cup-1',
+      'cup-2',
     ];
-    const index = Math.floor(Math.random() * hidingPlaces.length);
-    return hidingPlaces[index];
   }
 
 
-  const correctHidingPlaceEL = document.getElementById(`${correctSpot}-container`);
+  const correctHidingPlaceEL = document.getElementById(`cup${correctCup}`);
   correctHidingPlaceEL.classList.add('face');
-  if (userGuess === correctSpot) {
+  if (userGuess === correctCup) {
     correctGuesses++;
   }
   totalEl.textContent = totalGuesses;
