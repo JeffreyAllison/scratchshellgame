@@ -75,6 +75,12 @@ header img {
     height: var(--header-height);
 }
 
+.output-text {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: black;
+}
+
 p {
     margin: var(--gutter);
 }
@@ -89,3 +95,25 @@ footer {
     background-color: var(--color3);
     box-shadow: var(--shadow);
 }
+.cups {
+    display: flex;
+}
+
+.cup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.cup img {
+    width: 299px;
+    height: 300px;
+}
+
+.face::after {
+    font-size: 8rem;
+    content: '😃'; 
+    position: absolute;
+}
+
