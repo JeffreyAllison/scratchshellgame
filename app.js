@@ -17,18 +17,18 @@ let total = 0;
 
 // set event listeners 
 button0.addEventListener('click', () => {
-  const correctCup = getRandomCup();
-  handleGuess('cup-0', correctCup);
+  const correctSpot = getRandomCup();
+  handleGuess('cup-0', correctSpot);
 });
 
 button1.addEventListener('click', () => {
-  const correctCup = getRandomCup();
-  handleGuess('cup-1', correctCup);
+  const correctSpot = getRandomCup();
+  handleGuess('cup-1', correctSpot);
 });
 
 button2.addEventListener('click', () => {
-  const correctCup = getRandomCup();
-  handleGuess('cup-2', correctCup);
+  const correctSpot = getRandomCup();
+  handleGuess('cup-2', correctSpot);
 });
 
 function handleGuess(userGuess, correctCup) {
