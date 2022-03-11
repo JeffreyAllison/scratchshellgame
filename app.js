@@ -32,9 +32,9 @@ button2.addEventListener('click', () => {
 });
 
 function handleGuess(userGuess, correctCup) {
-  cupImg0.src = 'assets/cup0.png';
-  cupImg1.src = 'assets/cup1.png';
-  cupImg2.src = 'assets/cup2.png';
+  cupImg0.src = 'assets/normal-cup.png';
+  cupImg1.src = 'assets/normal-cup.png';
+  cupImg2.src = 'assets/normal-cup.png';
   total++;
 
   const correctCup = Math.floor(Math.random() * 3);
@@ -51,6 +51,7 @@ function handleGuess(userGuess, correctCup) {
 
   const correctHidingPlaceEL = document.getElementById(`cup${correctCup}`);
   correctHidingPlaceEL.classList.add('face');
+
   if (userGuess === correctCup) {
     correctGuesses++;
   }
