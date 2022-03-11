@@ -29,6 +29,7 @@ buttonZero.addEventListener('click', () => {
     cupImg2.src = './assets/revealedcup.png';
   }
   displayWinsLossesAndTotal();
+  handleGuess();
 });
 
 buttonOne.addEventListener('click', () => {
@@ -44,6 +45,7 @@ buttonOne.addEventListener('click', () => {
     cupImg2.src = './assets/revealedcup.png';
   }
   displayWinsLossesAndTotal();
+  handleGuess();
 });
 
 buttonTwo.addEventListener('click', () => {
@@ -59,6 +61,7 @@ buttonTwo.addEventListener('click', () => {
     cupImg2.src = './assets/revealedcup.png';
   }
   displayWinsLossesAndTotal();
+  handleGuess();
 });
 
 function resetImages() {
