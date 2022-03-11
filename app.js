@@ -17,7 +17,7 @@ let total = 0;
 
 // set event listeners 
 buttonZero.addEventListener('click', () => {
-  resetImages();
+  resetStyles();
   total++;
   const randomCupNumber = Math.floor(Math.random() * 3);
   if (randomCupNumber === 0) {
@@ -33,7 +33,7 @@ buttonZero.addEventListener('click', () => {
 });
 
 buttonOne.addEventListener('click', () => {
-  resetImages();
+  resetStyles();
   total++;
   const randomCupNumber = Math.floor(Math.random() * 3);
   if (randomCupNumber === 0) {
@@ -49,7 +49,7 @@ buttonOne.addEventListener('click', () => {
 });
 
 buttonTwo.addEventListener('click', () => {
-  resetImages();
+  resetStyles();
   total++;
   const randomCupNumber = Math.floor(Math.random() * 3);
   if (randomCupNumber === 0) {
@@ -64,7 +64,7 @@ buttonTwo.addEventListener('click', () => {
   handleGuess();
 });
 
-function resetImages() {
+function resetStyles() {
   cupImg0.src = './assets/concealedcup.png';
   cupImg1.src = './assets/concealedcup.png';
   cupImg2.src = './assets/concealedcup.png';
@@ -80,7 +80,6 @@ function handleGuess(userGuess, correctCup) {
   cupImg0.classList.remove('assets/concealedcup.png');
   cupImg1.classList.remove('assets/concealedcup.png');
   cupImg2.classList.remove('assets/concealedcup.png');
-  total++;
 
   const numberBetweenZeroAndThree = Math.floor(Math.random() * 3);
 

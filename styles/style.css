@@ -2,11 +2,11 @@
 body {
     /* feel free to update these css variables for a quick theme */
     
-    --color1: white;
+    --color1: rgb(208, 183, 255);
     --color2: white;
     --color3: white;
     --color4: white;
-    --color5: white;
+    --color5: rgb(184, 153, 255);
     
     /* https://coolors.co/generate and click export -> scss to get the colors to copy and paste below*/
         
@@ -37,6 +37,7 @@ main {
     justify-content: center;
     align-items: center;
     margin-bottom: calc(var(--footer-height));
+    background-color: var(--color1);
 }
 
 section {
