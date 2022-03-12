@@ -60,7 +60,7 @@ function handleGuess(userGuess, correctCup) {
 
   const correctBallLocationEl = document.getElementById(`${correctCup}`);
 
-  correctBallLocationEl.src = ('./assets/revealedcup.png');
+  correctBallLocationEl.src = './assets/revealedcup.png';
 
   total++;
 
