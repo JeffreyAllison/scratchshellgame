@@ -17,52 +17,36 @@ let total = 0;
 
 // set event listeners 
 buttonZero.addEventListener('click', () => {
-  resetStyles();
-  total++;
-  const randomCupNumber = Math.floor(Math.random() * 3);
-  if (randomCupNumber === 0) {
-    wins++;
-    cupImg0.src = './assets/revealedcup.png';
-  } else if (randomCupNumber === 1) {
-    cupImg1.src = './assets/revealedcup.png';
-  } else {
-    cupImg2.src = './assets/revealedcup.png';
-  }
-  displayWinsLossesAndTotal();
-  handleGuess();
+  let correctCup = getRandomHidingSpot();
+
+  handleGuess('cup-1', correctCup);
+
 });
 
 buttonOne.addEventListener('click', () => {
-  resetStyles();
-  total++;
-  const randomCupNumber = Math.floor(Math.random() * 3);
-  if (randomCupNumber === 0) {
-    wins++;
-    cupImg0.src = './assets/revealedcup.png';
-  } else if (randomCupNumber === 1) {
-    cupImg1.src = './assets/revealedcup.png';
-  } else {
-    cupImg2.src = './assets/revealedcup.png';
-  }
-  displayWinsLossesAndTotal();
-  handleGuess();
+  let correctCup = getRandomHidingSpot();
+
+  handleGuess('cup-2', correctCup);
+
 });
 
 buttonTwo.addEventListener('click', () => {
-  resetStyles();
-  total++;
-  const randomCupNumber = Math.floor(Math.random() * 3);
-  if (randomCupNumber === 0) {
-    wins++;
-    cupImg0.src = './assets/revealedcup.png';
-  } else if (randomCupNumber === 1) {
-    cupImg1.src = './assets/revealedcup.png';
-  } else {
-    cupImg2.src = './assets/revealedcup.png';
-  }
-  displayWinsLossesAndTotal();
-  handleGuess();
+  let correctCup = getRandomHidingSpot();
+
+  handleGuess('cup-3', correctCup);
+
 });
+
+function getRandomHidingSpot() {
+  const hidingPlaces = [
+    'cup-1',
+    'cup-2',
+    'cup-3'
+  ];
+
+  const index = Math.floor(Math.random() * hidingPlaces.length);
+  return hidingPlaces[index];
+}
 
 function resetStyles() {
   cupImg0.src = './assets/concealedcup.png';
@@ -77,24 +61,19 @@ function displayWinsLossesAndTotal() {
 }
 
 function handleGuess(userGuess, correctCup) {
-  cupImg0.classList.remove('assets/concealedcup.png');
-  cupImg1.classList.remove('assets/concealedcup.png');
-  cupImg2.classList.remove('assets/concealedcup.png');
 
-  const numberBetweenZeroAndThree = Math.floor(Math.random() * 3);
+  resetStyles();
 
-  if (numberBetweenZeroAndThree === correctCup) {
+  const correctBallLocationEl = document.getElementById(`${correctCup}`);
+
+  correctBallLocationEl.src = ('./assets/revealedcup.png');
+
+  total++;
+
+  if (userGuess === correctCup) {
     wins++;
-
-    const correctBallLocationEl = document.getElementById(`${correctCup}`);
-
-    correctBallLocationEl.classList.add('./assets/revealedcup.png');
-
-    if (userGuess === correctCup) {
-      wins++;
-    }
-    totalEl.textContent = total;
-    winsEl.textContent = wins;
-    lossesEl.textContent = total - wins;
   }
+  totalEl.textContent = total;
+  winsEl.textContent = wins;
+  lossesEl.textContent = total - wins;
 }
