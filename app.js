@@ -54,12 +54,6 @@ function resetStyles() {
   cupImg2.src = './assets/concealedcup.png';
 }
 
-function displayWinsLossesAndTotal() {
-  winsEl.textContent = wins;
-  lossesEl.textContent = total - wins;
-  totalEl.textContent = total;
-}
-
 function handleGuess(userGuess, correctCup) {
 
   resetStyles();
