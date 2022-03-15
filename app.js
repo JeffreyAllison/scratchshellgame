@@ -19,29 +19,29 @@ let total = 0;
 buttonZero.addEventListener('click', () => {
   let correctCup = getRandomHidingSpot();
 
-  handleGuess('cup-1', correctCup);
+  handleGuess('cup-0', correctCup);
 
 });
 
 buttonOne.addEventListener('click', () => {
   let correctCup = getRandomHidingSpot();
 
-  handleGuess('cup-2', correctCup);
+  handleGuess('cup-1', correctCup);
 
 });
 
 buttonTwo.addEventListener('click', () => {
-  let correctCup = getRandomHidingSpot();
+  const correctCup = getRandomHidingSpot();
 
-  handleGuess('cup-3', correctCup);
+  handleGuess('cup-2', correctCup);
 
 });
 
 function getRandomHidingSpot() {
   const hidingPlaces = [
+    'cup-0',
     'cup-1',
-    'cup-2',
-    'cup-3'
+    'cup-2'
   ];
 
   const index = Math.floor(Math.random() * hidingPlaces.length);
@@ -58,7 +58,7 @@ function handleGuess(userGuess, correctCup) {
 
   resetStyles();
 
-  const correctBallLocationEl = document.getElementById(`${correctCup}`);
+  const correctBallLocationEl = document.getElementById(correctCup);
 
   correctBallLocationEl.src = './assets/revealedcup.png';
 
